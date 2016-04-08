@@ -3,6 +3,12 @@ from django.utils import timezone
 
 class Post(models.Model):
 #https://docs.djangoproject.com/en/1.8/ref/models/fields/#field-types
+	categorias_post = ( 
+		('Tech','Tecnologia'),
+		('Life', 'Vida y Estilo'),
+		('Gral', 'General'),
+		)
+	categoria_post = models.CharField(max_length=30, choices=categorias_post, default='Tech', verbose_name="Categoria de Post")
 	author = models.ForeignKey('auth.User')
 	title =  models.CharField(max_length=200)
 	text =   models.TextField()
