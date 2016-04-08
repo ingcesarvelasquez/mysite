@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Post
+#https://docs.djangoproject.com/en/1.8/ref/contrib/admin/
+admin.site.register(Post)
