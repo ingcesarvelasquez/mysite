@@ -2,6 +2,12 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from blog.models import Post
 from .forms import PostForm
+#Mi primera vista basada en clases
+from django.views.generic import TemplateView
+
+class index(TemplateView):
+    template_name = 'blog/1vistaGenericaBasadaEnClases.html'
+#Fin
 
 #https://docs.djangoproject.com/en/1.8/topics/http/views/
 def post_list(request):
@@ -38,3 +44,5 @@ def post_edit(request, pk):
         else:
             form = PostForm(instance=post)
         return render(request, 'blog/post_edit.html', {'form': form})
+
+
