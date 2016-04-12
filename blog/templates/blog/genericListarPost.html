@@ -1,6 +1,25 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+	<div>
+		<p> <em> Tabla de Post Publicados </em> </p>
+		<table>
+			<tr>
+				<td><strong>Titulo: </strong><td>
+				<td><strong>Texto: </strong></td>
+				<td><strong>Categoria: </strong></td>
+			<tr>
+			{% for post in listaPosts %}
+			<tr>
+				<td>{{post.title}}<td>
+				<td>{{post.text}} </td>
+				<td> {{post.categoria_post}} </td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	<br>
+	<div>
 		<p> <em> Listado de Post Publicados </em> </p>
 		<ul>
 			{% for post in listaPosts %}
@@ -9,4 +28,5 @@
 				<li><b>Categoria:</b> {{post.categoria_post}} </li>
 			{% endfor %}
 		</ul>
-{% endblock %}
+			{% endblock %}
+	</div>
