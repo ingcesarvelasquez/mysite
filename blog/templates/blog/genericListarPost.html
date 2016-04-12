@@ -1,21 +1,26 @@
 {% extends 'blog/base.html' %}
+{% load bootstrap3 %}
 
 {% block content %}
-	<div>
+	<div class="table-responsive">
 		<p> <em> Tabla de Post Publicados </em> </p>
-		<table>
-			<tr>
-				<td><strong>Titulo: </strong><td>
-				<td><strong>Texto: </strong></td>
-				<td><strong>Categoria: </strong></td>
-			<tr>
-			{% for post in listaPosts %}
-			<tr>
-				<td>{{post.title}}<td>
-				<td>{{post.text}} </td>
-				<td> {{post.categoria_post}} </td>
-			</tr>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<td><strong>Titulo: </strong><td>
+					<td><strong>Texto: </strong></td>
+					<td><strong>Categoria: </strong></td>
+				<tr>
+			</thead>
+			<tbody>
+				{% for post in listaPosts %}
+				<tr>
+					<td>{{post.title}}<td>
+					<td>{{post.text}} </td>
+					<td> {{post.categoria_post}} </td>
+				</tr>
 			{% endfor %}
+			</tbody>
 		</table>
 	</div>
 	<br>

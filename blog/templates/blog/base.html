@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load bootstrap3 %}
     <html>
         <head>
             <title>Django Girls blog</title>
@@ -6,8 +7,10 @@
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
             <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+            <!-- Agregar Favicon   <link rel="shortcut icon" type="image/png" href="static/favicon.ico"> -->
+            <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}">
         </head>
-     <body>
+     <body> 
           <div class="page-header">
             <a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <h1><a href="/">Django Girls Blog</a></h1>
