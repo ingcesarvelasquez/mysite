@@ -3,11 +3,16 @@ from django.utils import timezone
 from blog.models import Post
 from .forms import PostForm
 #Mi primera vista basada en clases
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 class index(TemplateView):
     template_name = 'blog/1vistaGenericaBasadaEnClases.html'
 #Fin
+
+class ListarPost(ListView):
+    template_name = 'blog/genericListarPost.html'
+    model = Post
+    context_object_name = 'listaPosts'
 
 #https://docs.djangoproject.com/en/1.8/topics/http/views/
 def post_list(request):

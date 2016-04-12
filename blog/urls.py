@@ -9,4 +9,5 @@ urlpatterns = [
 	url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
 # Mi primera vista basada en clases
 	url(r'^index/$' , views.index.as_view() ),
+	url(r'^listapost/$' , views.ListarPost.as_view() ),
 ]

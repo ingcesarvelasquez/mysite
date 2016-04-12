@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+		<p> <em> Listado de Post Publicados </em> </p>
+		<ul>
+			{% for post in listaPosts %}
+				<li><b>Titulo:</b> {{post.title}} </li>
+				<li><b>Texto:</b> {{post.text}} </li>
+				<li><b>Categoria:</b> {{post.categoria_post}} </li>
+			{% endfor %}
+		</ul>
+{% endblock %}
